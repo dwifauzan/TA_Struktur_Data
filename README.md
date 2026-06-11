@@ -1,4 +1,4 @@
-# Warehouse Management System (C++26)
+# SISTEM PENYORTIRAN BARANG DI GUDANG MENGGUNAKAN HEAP DAN HASH TABLE (C++21)
 
 A terminal-based Warehouse Management System implemented in C++ to manage inventory with efficient search and priority management.
 
