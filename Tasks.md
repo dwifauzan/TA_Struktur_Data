@@ -1,8 +1,8 @@
 # TASKS
 
-## req 1
-- Membuat class Barang.
-- Membuat menu utama terminal.
+## req 1 (Done)
+- [x] Membuat class Barang.
+- [x] Membuat menu utama terminal.
 
 ## req 2
 - Implementasi Hash Table.
@@ -17,10 +17,10 @@
 - Pengujian sistem.
 
 ## Checklist
-- [ ] Class Barang
+- [x] Class Barang
 - [ ] Hash Table
 - [ ] Min Heap
 - [ ] Gudang Manager
-- [ ] Menu CLI
+- [x] Menu CLI
 - [ ] Testing
 - [ ] Dokumentasi

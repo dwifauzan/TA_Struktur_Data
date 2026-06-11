@@ -12,7 +12,7 @@ Membuat sistem manajemen gudang berbasis terminal menggunakan C++ yang mampu:
 - Mengurangi risiko barang kedaluwarsa.
 
 ## Teknologi
-- Bahasa: C++17
+- Bahasa: C++21
 - UI: Terminal / CLI
 - Struktur Data:
   - Hash Table
