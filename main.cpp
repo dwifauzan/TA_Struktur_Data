@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
-#include <print>
+#include <vector>
+#include <algorithm>
+//#include <print>
 #include "Barang.cpp" // Menginclude file cpp secara langsung sesuai permintaan 2 file sederhana
 
 using namespace std;
@@ -19,6 +21,8 @@ void showMenu() {
 }
 
 int main() {
+    vector<Barang> daftarBarang;
+
     int choice;
     while (true) {
         showMenu();
@@ -38,7 +42,22 @@ int main() {
 
         // Logika menu (Fitur akan diimplementasikan pada req selanjutnya)
         switch (choice) {
-            case 1: cout << ("Fitur Tambah Barang (Coming Soon)\n"); break;
+            case 1: {
+                int id, stok, prioritas;
+                string nama, lokasiRak;
+
+                cout << "ID Barang : "; cin >> id;
+                cout << "Nama Barang : "; cin >> nama;
+                cout << "Stok Barang : "; cin >> stok;
+                cout << "Masukkan Lokasi Rak : "; cin >> lokasiRak;
+                cout << "Skala Prioritas (Angka) : "; cin >> prioritas;
+
+                Barang barangBaru(id, nama, stok, lokasiRak, prioritas);
+                daftarBarang.push_back(barangBaru);
+
+                cout << "Barang berhasil ditambahkan";
+                break;
+            }
             case 2: cout << ("Fitur Cari Barang (Coming Soon)\n"); break;
             case 3: cout << ("Fitur Tampilkan Semua Barang (Coming Soon)\n"); break;
             case 4: cout << ("Fitur Tampilkan Barang Prioritas Tertinggi (Coming Soon)\n"); break;
