@@ -5,7 +5,7 @@
 - [x] Membuat menu utama terminal.
 
 ## req 2
-- Implementasi Hash Table.
+- [x] Implementasi Hash Table.
 - Implementasi pencarian barang.
 
 ## req 3
@@ -18,7 +18,7 @@
 
 ## Checklist
 - [x] Class Barang
-- [ ] Hash Table
+- [x] Hash Table
 - [ ] Min Heap
 - [ ] Gudang Manager
 - [x] Menu CLI
