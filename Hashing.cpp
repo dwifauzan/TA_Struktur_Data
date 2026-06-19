@@ -47,4 +47,33 @@ public:
         cout << "Berhasil menyimpan " << barangBaru.nama 
              <<  "di indeks vector: " << indeks << endl;
     }
+
+    Barang* cariBarang(int idBarang) {
+        // Mencari barang berdasarkan ID
+        for (int i = 0; i < ukuranTabel; i++) {
+            if (tabel[i].id == idBarang) {
+                return &tabel[i];
+            }
+        }
+        return nullptr; // Barang tidak ditemukan
+    }
+
+    void tampilkanSemuaBarang() {
+        cout << "\n=== DAFTAR SEMUA BARANG ==="<< endl;
+        bool ada = false;
+        for (int i = 0; i < ukuranTabel; i++) {
+            if (tabel[i].id != -1) {
+                ada = true;
+                cout << "ID         : " << tabel[i].id << endl;
+                cout << "Nama       : " << tabel[i].nama << endl;
+                cout << "Stok       : " << tabel[i].stok << endl;
+                cout << "Lokasi Rak : " << tabel[i].lokasiRak << endl;
+                cout << "Prioritas  : " << tabel[i].prioritas << endl;
+                cout << "-------------------------------------------" << endl;
+            }
+        }
+        if (!ada) {
+            cout << "Tidak ada barang dalam gudang." << endl;
+        }
+    }
 };

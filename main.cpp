@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <print>
-#include "Barang.cpp" // Menginclude file cpp secara langsung sesuai permintaan 2 file sederhana
+#include "GudangManager.cpp"
 
 using namespace std;
 
@@ -19,10 +19,12 @@ void showMenu() {
 }
 
 int main() {
+    GudangManager gudang(100); // Hash table dengan kapasitas 100
     int choice;
+    
     while (true) {
         showMenu();
-        
+
         // Input validasi sederhana untuk menu
         if (!(cin >> choice)) {
             cin.clear();
@@ -30,21 +32,75 @@ int main() {
             cout << ("Input harus angka.\n");
             continue;
         }
-        
+
         if (choice == 7) {
             cout << ("Keluar dari program.\n");
             break;
         }
 
-        // Logika menu (Fitur akan diimplementasikan pada req selanjutnya)
+        // Implementasi lengkap semua fitur
         switch (choice) {
-            case 1: cout << ("Fitur Tambah Barang (Coming Soon)\n"); break;
-            case 2: cout << ("Fitur Cari Barang (Coming Soon)\n"); break;
-            case 3: cout << ("Fitur Tampilkan Semua Barang (Coming Soon)\n"); break;
-            case 4: cout << ("Fitur Tampilkan Barang Prioritas Tertinggi (Coming Soon)\n"); break;
-            case 5: cout << ("Fitur Keluarkan Barang (Coming Soon)\n"); break;
-            case 6: cout << ("Fitur Tampilkan Antrian Prioritas (Coming Soon)\n"); break;
-            default: cout << ("Pilihan tidak valid.\n"); break;
+            case 1: { // Tambah Barang
+                int id, stok, prioritas;
+                string nama, lokasiRak;
+                
+                cout << "\n=== TAMBAH BARANG ==="<< endl;
+                cout << "Masukkan ID Barang: ";
+                cin >> id;
+                cin.ignore();
+                
+                cout << "Masukkan Nama Barang: ";
+                getline(cin, nama);
+                
+                cout << "Masukkan Stok: ";
+                cin >> stok;
+                cin.ignore();
+                
+                cout << "Masukkan Lokasi Rak: ";
+                getline(cin, lokasiRak);
+                
+                cout << "Masukkan Prioritas (angka kecil = prioritas tinggi): ";
+                cin >> prioritas;
+                
+                gudang.tambahBarang(id, nama, stok, lokasiRak, prioritas);
+                break;
+            }
+            
+            case 2: { // Cari Barang
+                int id;
+                cout << "\n=== CARI BARANG ==="<< endl;
+                cout << "Masukkan ID Barang yang dicari: ";
+                cin >> id;
+                gudang.cariBarang(id);
+                break;
+            }
+            
+            case 3: { // Tampilkan Semua Barang
+                gudang.tampilkanSemuaBarang();
+                break;
+            }
+            
+            case 4: { // Tampilkan Barang Prioritas Tertinggi
+                cout << "\n=== BARANG PRIORITAS TERTINGGI ==="<< endl;
+                gudang.lihatPrioritasTertinggi();
+                break;
+            }
+            
+            case 5: { // Keluarkan Barang
+                cout << "\n=== KELUARKAN BARANG ==="<< endl;
+                gudang.keluarkanBarangPrioritas();
+                break;
+            }
+            
+            case 6: { // Tampilkan Antrian Prioritas
+                cout << "\n=== ANTRIAN PRIORITAS ==="<< endl;
+                gudang.tampilkanAntrianPrioritas();
+                break;
+            }
+            
+            default: 
+                cout << ("Pilihan tidak valid.\n"); 
+                break;
         }
     }
     return 0;

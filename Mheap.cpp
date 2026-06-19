@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <vector> 
 #include "Barang.cpp"  
@@ -74,12 +75,13 @@ class Mheap {
 
         void tampilkan_semua() {
             if (heap.size() <= 1) {
-                cout << "heap kosong" << endl; 
+                cout << "heap sedang kosong coba lagi nanti" << endl; 
+                return;
             }
 
             cout << "semua barang : " << endl;
 
-            for (int i = 1; heap.size(); i++){
+            for (int i = 1; i < heap.size(); i++){
                 cout << "id         : " << heap[i].id << endl; 
                 cout << "nama       : " << heap[i].nama << endl; 
                 cout << "stok       : " << heap[i].stok << endl; 
