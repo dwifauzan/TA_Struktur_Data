@@ -3,6 +3,7 @@
 #include <vector>
 #include <algorithm>
 //#include <print>
+#include "Mheap.cpp"
 #include "Barang.cpp" // Menginclude file cpp secara langsung sesuai permintaan 2 file sederhana
 
 using namespace std;
@@ -21,6 +22,8 @@ void showMenu() {
 }
 
 int main() {
+    Mheap antrianGudang;
+
     vector<Barang> daftarBarang;
 
     int choice;
@@ -58,8 +61,13 @@ int main() {
                 cout << "Barang berhasil ditambahkan";
                 break;
             }
-            case 2: cout << ("Fitur Cari Barang (Coming Soon)\n"); break;
-            case 3: cout << ("Fitur Tampilkan Semua Barang (Coming Soon)\n"); break;
+            case 2: {
+                
+            break;}
+            case 3: {
+                antrianGudang.tampilkan_semua();
+                break;
+            }
             case 4: cout << ("Fitur Tampilkan Barang Prioritas Tertinggi (Coming Soon)\n"); break;
             case 5: cout << ("Fitur Keluarkan Barang (Coming Soon)\n"); break;
             case 6: cout << ("Fitur Tampilkan Antrian Prioritas (Coming Soon)\n"); break;

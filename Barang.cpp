@@ -1,3 +1,6 @@
+#ifndef BARANG_CPP
+#define BARANG_CPP
+
 #include <string>
 
 using namespace std;
@@ -17,3 +20,5 @@ public:
     Barang(int id, string nama, int stok, string lokasiRak, int prioritas)
         : id(id), nama(nama), stok(stok), lokasiRak(lokasiRak), prioritas(prioritas) {}
 };
+
+#endif
