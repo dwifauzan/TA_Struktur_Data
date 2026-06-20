@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <cstdlib>
 #include "Barang.cpp"
 
 using namespace std;
@@ -44,12 +45,14 @@ public:
         }
         //Menamabahkan barang ke indeks baru
         tabel[indeks] = barangBaru;
-        cout << "Berhasil menyimpan " << barangBaru.nama 
+        cout << "Berhasil menyimpan " << barangBaru.nama
+             << "\n" 
              <<  "di indeks vector: " << indeks << endl;
     }
 
     Barang* cariBarang(int idBarang) {
         // Mencari barang berdasarkan ID
+        system("cls");
         for (int i = 0; i < ukuranTabel; i++) {
             if (tabel[i].id == idBarang) {
                 return &tabel[i];
@@ -59,6 +62,9 @@ public:
     }
 
     void tampilkanSemuaBarang() {
+
+        system("cls");
+
         cout << "\n=== DAFTAR SEMUA BARANG ==="<< endl;
         bool ada = false;
         for (int i = 0; i < ukuranTabel; i++) {

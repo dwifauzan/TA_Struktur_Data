@@ -53,7 +53,7 @@ class Mheap {
         void tambah_prioritas (Barang b) {
             heap.push_back(b);
             ke_atas (heap.size() - 1 );
-            cout << b.nama << "telah masuk" << endl;
+            cout << b.nama << " telah masuk (prioritas)" << endl;
         } 
 
         void ambil_prioritas (){
