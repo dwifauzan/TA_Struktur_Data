@@ -56,10 +56,10 @@ class Mheap {
             cout << b.nama << " telah masuk (prioritas)" << endl;
         } 
 
-        void ambil_prioritas (){
+        Barang ambil_prioritas (){
             if (heap.size() <= 1){
                 cout << "heap kosong" << endl;
-                return;
+                return Barang();
             }
 
             Barang depan = heap[1];
@@ -71,6 +71,7 @@ class Mheap {
             if (heap.size() > 1) {
                 ke_bawah(1);
             }
+            return depan;
         }
 
         void tampilkan_semua() {

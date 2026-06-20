@@ -61,6 +61,26 @@ public:
         return nullptr; // Barang tidak ditemukan
     }
 
+    vector<Barang> dapatkanSemuaBarang() {
+        vector<Barang> hasil;
+        for (int i = 0; i < ukuranTabel; i++) {
+            if (tabel[i].id != -1) {
+                hasil.push_back(tabel[i]);
+            }
+        }
+        return hasil;
+    }
+
+    void hapusBarang(int id) {
+        for (int i = 0; i < ukuranTabel; i++) {
+            if (tabel[i].id == id) {
+                tabel[i] = Barang();
+                cout << "Barang dengan ID " << id << " telah dihapus dari gudang.\n";
+                return;
+            }
+        }
+    }
+
     void tampilkanSemuaBarang() {
 
         system("cls");
