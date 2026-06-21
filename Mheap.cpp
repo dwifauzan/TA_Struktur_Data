@@ -74,6 +74,21 @@ class Mheap {
             return depan;
         }
 
+        void tampilkan_prioritas_tertinggi(){
+         if (heap.size() < 1) {
+            cout << "heap sedang kosong coba lagi nanti" << endl;
+            return;
+         }
+
+            cout << "prioritas tertinggi" << endl;
+            cout << "id         : " << heap[1].id << endl; 
+            cout << "nama       : " << heap[1].nama << endl; 
+            cout << "stok       : " << heap[1].stok << endl; 
+            cout << "lokasi rak : " << heap[1].lokasiRak << endl; 
+            cout << "prioritas  : " << heap[1].prioritas << endl;
+
+        }
+
         void tampilkan_semua() {
             if (heap.size() <= 1) {
                 cout << "heap sedang kosong coba lagi nanti" << endl; 
@@ -88,7 +103,7 @@ class Mheap {
                 cout << "stok       : " << heap[i].stok << endl; 
                 cout << "lokasi rak : " << heap[i].lokasiRak << endl; 
                 cout << "prioritas  : " << heap[i].prioritas << endl;
-                cout << "-------------------------------------------";
+                cout << "-------------------------------------------" << endl;
             }
         }
     

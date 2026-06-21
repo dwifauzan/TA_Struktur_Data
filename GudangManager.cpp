@@ -149,6 +149,6 @@ public:
 
     // Menampilkan barang dengan prioritas tertinggi tanpa mengeluarkannya
     void lihatPrioritasTertinggi() {
-        minHeap->tampilkan_semua();
+        minHeap->tampilkan_prioritas_tertinggi()
     }
 };
